@@ -1,0 +1,28 @@
+button {
+  margin: 10px 0;
+  color: white;
+  background-color: $secondary;
+  border: 0;
+  border-radius: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($secondary, 15%);
+  }
+}
+button.outline {
+  background: none;
+  border: 1px solid $secondary;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+button.btn-lg {
+  font-size: $fontSizeL;
+  padding: 15px 45px;
+  border-width: 2px;
+  border-radius: 30px;
+}
+

@@ -10,7 +10,8 @@ const PATTERNS = [
 
 const TITLE_REGEX = /^#+(.*)$/;
 
-module.exports = (markdownLines) => {
+module.exports = (markdownText) => {
+  const markdownLines = markdownText.match(/[^\r\n]+/g);
   const elements = [];
   let currentQuestion = null;
   let lastTitle = null;
@@ -83,11 +84,11 @@ module.exports = (markdownLines) => {
         });
       } else {
         // It's Text, group it
-        currentText += currentText.length > 0 ? '\n ' : '';
+        currentText += currentText.length > 0 ? '\n\n' : '';
         currentText += line
       }
     }
   });
 
-  console.log(JSON.stringify(elements));
+  return elements;
 };

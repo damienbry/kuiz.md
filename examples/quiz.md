@@ -6,8 +6,6 @@ Understand deeply how to select elements in CSS
 
 Which one selects the elements in bold ?
 
-![](http://www.imgur.com/XKzin7H.gif)
-
 <p>
   This is a sample text
   <span>**select this text**</span>

@@ -17,5 +17,11 @@ module.exports = {
     return {
       type: 'TRY_AGAIN'
     };
+  },
+  generateQuiz: (data) => {
+    return {
+      type: 'GENERATE_QUIZ',
+      data
+    }
   }
 };

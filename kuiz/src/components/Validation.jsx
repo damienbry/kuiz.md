@@ -27,7 +27,7 @@ module.exports = createReactClass({
       You have some error(s), keep learning ! 🚀
       <button onClick={this.tryAgain}>Try again</button>
     </div>;
-    const element = this.props.submitted ? resultText : <button onClick={this.onSubmit}>Submit</button>;
+    const element = this.props.submitted ? resultText : <button className="submit" onClick={this.onSubmit}>Submit</button>;
     return <div className="validation">
       {element}
     </div>;

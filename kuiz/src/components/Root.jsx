@@ -7,5 +7,4 @@ const Validation = require('../containers/Validation');
 
 module.exports = <div className="quizzContainer">
   <ElementList/>
-  <Validation/>
 </div>;

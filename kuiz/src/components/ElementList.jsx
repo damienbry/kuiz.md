@@ -6,6 +6,7 @@ const createReactClass = require('create-react-class');
 
 const Question = require('./Question.jsx');
 const Text = require('./Text.jsx');
+const Validation = require('../containers/Validation');
 
 module.exports = createReactClass({
   displayName: 'ElementList',
@@ -26,6 +27,7 @@ module.exports = createReactClass({
             return <Text key={index} data={data.line}/>;
         }
       })}
+      <Validation/>
     </div>;
   }
 });

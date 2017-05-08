@@ -1,5 +1,7 @@
 'use strict';
 
+const quizParser = require('./quizParser');
+
 module.exports = (state = {}, action) => {
   const newState = Object.assign({}, state);
 
@@ -42,6 +44,33 @@ module.exports = (state = {}, action) => {
       newState.ui.submitted = false;
       newState.ui.errors = [];
 
+      return newState;
+    case 'GENERATE_QUIZ':
+      if (!action.data) {
+        return newState;
+      }
+
+      // Reset the state
+      newState.questions = {
+        byId: {},
+        allIds: []
+      };
+      newState.answers = {
+        byId: {},
+        allIds: []
+      };
+      newState.raw = {
+        byId: {},
+        allIds: []
+      };
+      newState.elements = [];
+      newState.ui = {
+        isValid: false,
+        submitted: false,
+        errors: []
+      };
+
+      quizParser(newState, action.data);
       return newState;
     default:
       return state;

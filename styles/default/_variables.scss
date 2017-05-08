@@ -1,0 +1,15 @@
+$primary: #45036F;
+$secondary: #FF8B00;
+$tertiary: #65A6D1;
+$dark: #414141;
+$light: #EEEEEE;
+
+//Variations
+$primaryMidlyDesaturated: desaturate($primary, 50%);
+$primaryDesaturated: desaturate($primary, 75%);
+
+$fontSizeXL: 40px;
+$fontSizeL: 25px;
+$fontSizeM: 20px;
+$fontSizeS: 16px;
+$fontSizeXS: 13px;
