@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "$(npm bin)/webpack-dev-server",
+    "deploy": "webpack && cp index.html dist/ && cp bundle.js dist/ && cp logo.png dist/ && cp background.jpg dist/  && firebase deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

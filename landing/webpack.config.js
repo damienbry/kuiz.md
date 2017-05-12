@@ -3,7 +3,7 @@
 module.exports = {
   entry: './app.js',      // The entrypoint of your bundle, webpack will fetch all its dependencies
   output: {
-    filename: 'dist/bundle.js' // The name of the file you want to generate
+    filename: 'bundle.js' // The name of the file you want to generate
   },
   devtool: 'cheap-eval-source-map',
   module: {
