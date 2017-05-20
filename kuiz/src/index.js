@@ -28,14 +28,20 @@ const initialState = {
   ui: {
     isValid: false,
     submitted: false,
-    errors: []
+    errors: [],
+    grade: 0,
+    maxGrade: 0
   }
 };
 
 let store = null;
 
-const init = (quizData) => {
-  const newState = reducers(initialState, actions.generateQuiz(quizData));
+const init = (kuizData, callback) => {
+
+  //Storing the user's callback
+  initialState.callback = callback;
+
+  const newState = reducers(initialState, actions.generateKuiz(kuizData));
   store = createStore(reducers, newState);
 
   ReactDOM.render(
@@ -48,11 +54,11 @@ const init = (quizData) => {
 
 module.exports = {
   init,
-  update: (quizData) => {
+  update: (kuizData) => {
     if (!store) {
       throw new Error('You must call the init method before updating the kuiz');
     }
 
-    store.dispatch(actions.generateQuiz(quizData));
+    store.dispatch(actions.generateKuiz(kuizData));
   }
 };

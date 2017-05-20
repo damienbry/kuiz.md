@@ -1,6 +1,6 @@
 'use strict';
 
-const quizParser = require('./quizParser');
+const kuizParser = require('./kuizParser');
 
 module.exports = (state = {}, action) => {
   const newState = Object.assign({}, state);
@@ -16,8 +16,13 @@ module.exports = (state = {}, action) => {
       newState.answers.byId[action.id].selected = !answer.selected;
 
       return newState;
-    case 'SUBMIT_QUIZZ':
+    case 'SUBMIT_KUIZ':
+      if (!action.data) {
+        return newState;
+      }
+
       let isValid = true;
+      const grades = {};
 
       newState.answers.allIds.map(id => state.answers.byId[id])
                           .forEach(answer => {
@@ -27,11 +32,17 @@ module.exports = (state = {}, action) => {
                               }
 
                               isValid = false;
+                              grades[answerId] = false;
                             }
                           });
 
       newState.ui.isValid = isValid;
       newState.ui.submitted = true;
+      newState.ui.grade = newState.ui.maxGrade - Object.keys(grades).length;
+
+      if (isValid) {
+       newState.callback(newState.ui.grade);
+      }
 
       return newState;
     case 'TRY_AGAIN':
@@ -45,7 +56,7 @@ module.exports = (state = {}, action) => {
       newState.ui.errors = [];
 
       return newState;
-    case 'GENERATE_QUIZ':
+    case 'GENERATE_KUIZ':
       if (!action.data) {
         return newState;
       }
@@ -67,10 +78,12 @@ module.exports = (state = {}, action) => {
       newState.ui = {
         isValid: false,
         submitted: false,
-        errors: []
+        errors: [],
+        grade: 0,
+        maxGrade: 0
       };
 
-      quizParser(newState, action.data);
+      kuizParser(newState, action.data);
       return newState;
     default:
       return state;

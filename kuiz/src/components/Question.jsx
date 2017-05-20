@@ -11,16 +11,10 @@ module.exports = createReactClass({
   displayName: 'Question',
 
   propTypes: {
-    questionId: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    questionId: PropTypes.number.isRequired
   },
 
   render() {
-    /*
-
-      <h1>{this.props.title}</h1>
-      <Text data={this.props.text}/>
-     * */
     return <div className="question">
       <AnswerList questionId={this.props.questionId}/>
     </div>;

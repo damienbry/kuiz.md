@@ -14,20 +14,40 @@ module.exports = createReactClass({
     tryAgain: PropTypes.func.isRequired
   },
 
+  getInitialState() {
+    return {
+      email: ''
+    };
+  },
+
   onSubmit() {
-    this.props.onSubmit();
+    this.props.onSubmit({
+      email: this.state.email
+    });
   },
 
   tryAgain() {
     this.props.tryAgain();
   },
 
+  onEmailChange(event) {
+    this.setState({email: event.target.value});
+  },
+
   render() {
-    const resultText = this.props.isValid ? 'Quizz valid ! 💪' : <div className="tryAgain">
+    const resultText = `Grade: ${this.props.grade} / ${this.props.maxGrade}`;
+      /*this.props.isValid ? 'Quizz valid ! 💪' : <div className="tryAgain">
       You have some error(s), keep learning ! 🚀
       <button onClick={this.tryAgain}>Try again</button>
+    </div>;*/
+
+    const submitElement = <div className="submitContainer">
+      <input type="email" name="email" placeholder="awesome@any.thing" onChange={this.onEmailChange}/>
+      <button className="submit" onClick={this.onSubmit}>Submit</button>
     </div>;
-    const element = this.props.submitted ? resultText : <button className="submit" onClick={this.onSubmit}>Submit</button>;
+
+    const element = this.props.submitted ? resultText : submitElement;
+
     return <div className="validation">
       {element}
     </div>;

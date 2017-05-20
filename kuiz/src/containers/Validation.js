@@ -1,20 +1,22 @@
 'use strict';
 
 const {connect} = require('react-redux');
-const {submitQuizz, tryAgain} = require('../actions');
+const {submitKuiz, tryAgain} = require('../actions');
 const Validation = require('../components/Validation.jsx');
 
 const mapStateToProps = (state, ownProps) => {
   return {
     isValid: state.ui.isValid,
-    submitted: state.ui.submitted
+    submitted: state.ui.submitted,
+    grade: state.ui.grade,
+    maxGrade: state.ui.maxGrade
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onSubmit: () => {
-      dispatch(submitQuizz());
+    onSubmit: (data) => {
+      dispatch(submitKuiz(data));
     },
     tryAgain: () => {
       dispatch(tryAgain());

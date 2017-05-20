@@ -1,6 +1,6 @@
 'use strict';
 
 const app = require('./src');
-const quizz = require('./quizz.json');
+const kuiz = require('./kuiz.json');
 
-app.init(quizz);
+app.init(kuiz);

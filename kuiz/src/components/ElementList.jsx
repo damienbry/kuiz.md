@@ -21,10 +21,9 @@ module.exports = createReactClass({
         switch(type) {
           case 'questions':
             return <Question key={index}
-                             title={data.title}
                              questionId={data.id}/>;
           default:
-            return <Text key={index} data={data.line}/>;
+            return <Text key={index} data={data.text}/>;
         }
       })}
       <Validation/>

@@ -1,12 +1,13 @@
 'use strict';
 
-module.exports = (state, quizz) => {
+module.exports = (state, kuiz) => {
   let questionCount = 0;
   let answerCount = 0;
   let rawCount = 0;
 
   // Normalizes the state
-  quizz.forEach(element => {
+  kuiz.forEach(element => {
+    console.log('element', element);
     if (element.type === 'question') {
       const question = element.data;
       question.id = questionCount;
@@ -41,5 +42,7 @@ module.exports = (state, quizz) => {
       rawCount++;
     }
   });
+
+  state.ui.maxGrade = state.questions.allIds.length;
 }
 

@@ -8,9 +8,10 @@ module.exports = {
       id
     };
   },
-  submitQuizz: () => {
+  submitKuiz: (data) => {
     return {
-      type: 'SUBMIT_QUIZZ'
+      type: 'SUBMIT_KUIZ',
+      data
     };
   },
   tryAgain: () => {
@@ -18,9 +19,9 @@ module.exports = {
       type: 'TRY_AGAIN'
     };
   },
-  generateQuiz: (data) => {
+  generateKuiz: (data) => {
     return {
-      type: 'GENERATE_QUIZ',
+      type: 'GENERATE_KUIZ',
       data
     }
   }
