@@ -26,8 +26,9 @@ const markdown = '# your *Markdown* text _here_';
 const yourCallback = (data) => {
   alert('User ' + data.email + ' had grade ' + data.grade);
 };
+const elementIdToRenderInto = "my-kuiz"
 
-app.init(markdown, yourCallback);
+app.init(markdown, yourCallback, elementIdToRenderInto);
 ```
 
 ## Special notation

@@ -40,7 +40,10 @@ module.exports = (state = {}, action) => {
       newState.ui.submitted = true;
       newState.ui.grade = newState.ui.maxGrade - Object.keys(grades).length;
 
-      newState.callback(newState.ui.grade);
+      newState.callback({
+        email: action.data.email,
+        grade: newState.ui.grade
+      });
 
       return newState;
     case 'TRY_AGAIN':

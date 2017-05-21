@@ -1,14 +1,15 @@
 require('./src/styles/app.scss');
 
-const app = require('../kuiz/dist');
+const app = require('../kuiz/src');
 const textarea = document.getElementsByClassName('form')[0];
 
 const parseTextarea = () => {
   return textarea.value;
 }
 
-app.init(parseTextarea(), (email) => {
-  alert(email);
+app.init(parseTextarea(), (data) => {
+  console.log(data);
+  alert('User ' + data.email + ' had grade ' + data.grade);
 }, 'kuiz');
 
 // Update the quiz
