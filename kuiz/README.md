@@ -1,4 +1,4 @@
-# kuiz.md
+# Kuiz.md NPM module
 
 You can use the kuiz NPM module to generate your own kuiz from Markdown you provide.
 
@@ -41,16 +41,3 @@ random text
 ```
 
 Other answer types: WIP
-
-## Development
-
-To launch a local webserver, run
-```bash
-npm start
-```
-
-## Deployment
-
-```bash
-npm run deploy
-```

@@ -10,6 +10,7 @@ require('./styles/default/app.scss');
 const Root = require('./components/Root.jsx');
 const reducers = require('./reducers');
 const actions = require('./actions');
+const parser = require('../parser');
 
 const initialState = {
   questions: {
@@ -36,12 +37,12 @@ const initialState = {
 
 let store = null;
 
-const init = (kuizData, callback) => {
+const init = (kuizString, callback) => {
 
   //Storing the user's callback
   initialState.callback = callback;
 
-  const newState = reducers(initialState, actions.generateKuiz(kuizData));
+  const newState = reducers(initialState, actions.generateKuiz(parser(kuizString)));
   store = createStore(reducers, newState);
 
   ReactDOM.render(
@@ -54,11 +55,11 @@ const init = (kuizData, callback) => {
 
 module.exports = {
   init,
-  update: (kuizData) => {
+  update: (kuizString) => {
     if (!store) {
       throw new Error('You must call the init method before updating the kuiz');
     }
 
-    store.dispatch(actions.generateKuiz(kuizData));
+    store.dispatch(actions.generateKuiz(parser(kuizString)));
   }
 };

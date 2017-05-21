@@ -1,6 +1,19 @@
 {
+  "name": "kuiz-md",
+  "version": "0.1.0",
+  "description": "Generate quiz from Markdown",
+  "main": "index.js",
   "scripts": {
     "start": "$(npm bin)/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orbmancer/kuiz.md.git"
+  },
+  "author": "Orbmancer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Orbmancer/kuiz.md/issues"
   },
   "dependencies": {
     "create-react-class": "^15.5.1",

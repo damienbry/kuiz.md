@@ -42,10 +42,6 @@ module.exports = createReactClass({
 
   render() {
     const resultText = `Grade: ${this.props.grade} / ${this.props.maxGrade}`;
-      /*this.props.isValid ? 'Quizz valid ! 💪' : <div className="tryAgain">
-      You have some error(s), keep learning ! 🚀
-      <button onClick={this.tryAgain}>Try again</button>
-    </div>;*/
 
     const submitElement = <div className="submitContainer">
       <input type="email" name="email" placeholder="awesome@any.thing" onChange={this.onEmailChange} onKeyDown={this.onKeyDown}/>

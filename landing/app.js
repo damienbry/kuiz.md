@@ -2,10 +2,9 @@ require('./src/styles/app.scss');
 
 const app = require('../kuiz/src');
 const textarea = document.getElementsByClassName('form')[0];
-const parser = require('../parser/parser');
 
 const parseTextarea = () => {
-  return parser(textarea.value);
+  return textarea.value;
 }
 
 app.init(parseTextarea(), (email) => {
