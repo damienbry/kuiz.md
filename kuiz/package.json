@@ -1,10 +1,11 @@
 {
   "name": "kuiz-md",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Generate quiz from Markdown",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "$(npm bin)/webpack-dev-server"
+    "start": "$(npm bin)/webpack-dev-server",
+    "prepublish": "$(npm bin)/webpack"
   },
   "repository": {
     "type": "git",

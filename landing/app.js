@@ -1,6 +1,6 @@
 require('./src/styles/app.scss');
 
-const app = require('../kuiz');
+const app = require('../kuiz/dist');
 const textarea = document.getElementsByClassName('form')[0];
 
 const parseTextarea = () => {
