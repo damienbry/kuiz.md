@@ -8,7 +8,9 @@ const parseTextarea = () => {
   return parser(textarea.value);
 }
 
-app.init(parseTextarea());
+app.init(parseTextarea(), (email) => {
+  alert(email);
+});
 
 // Update the quiz
 let interval = null;

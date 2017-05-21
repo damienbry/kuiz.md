@@ -41,12 +41,21 @@
     .checkbox.checked {
       border-color: $secondary;
       background-color: $secondary;
+      position: relative;
+
       &:after {
-        content: '✓';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        line-height: 18px;
+
+        content: 'x';
         font-size: 15px;
         color: white;
         text-align: center;
-        margin-left: 5px;
+        margin-left: 1px;
       }
     }
   }

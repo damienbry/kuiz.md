@@ -34,6 +34,12 @@ module.exports = createReactClass({
     this.setState({email: event.target.value});
   },
 
+  onKeyDown(event) {
+    if (event.key === 'Enter') {
+      this.onSubmit();
+    }
+  },
+
   render() {
     const resultText = `Grade: ${this.props.grade} / ${this.props.maxGrade}`;
       /*this.props.isValid ? 'Quizz valid ! 💪' : <div className="tryAgain">
@@ -42,7 +48,7 @@ module.exports = createReactClass({
     </div>;*/
 
     const submitElement = <div className="submitContainer">
-      <input type="email" name="email" placeholder="awesome@any.thing" onChange={this.onEmailChange}/>
+      <input type="email" name="email" placeholder="awesome@any.thing" onChange={this.onEmailChange} onKeyDown={this.onKeyDown}/>
       <button className="submit" onClick={this.onSubmit}>Submit</button>
     </div>;
 

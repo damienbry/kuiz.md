@@ -32,7 +32,7 @@ module.exports = (state = {}, action) => {
                               }
 
                               isValid = false;
-                              grades[answerId] = false;
+                              grades[answer.questionId] = false;
                             }
                           });
 
@@ -40,9 +40,7 @@ module.exports = (state = {}, action) => {
       newState.ui.submitted = true;
       newState.ui.grade = newState.ui.maxGrade - Object.keys(grades).length;
 
-      if (isValid) {
-       newState.callback(newState.ui.grade);
-      }
+      newState.callback(newState.ui.grade);
 
       return newState;
     case 'TRY_AGAIN':
