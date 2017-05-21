@@ -13,6 +13,12 @@ yarn add kuiz-md
 
 ## Usage
 
+Provide:
+
+- your markdown text
+- a callback triggered when an user sends the kuiz
+- a HTML element to render the kuiz into
+
 ```javascript
 const app = require('kuiz-md');
 
@@ -20,8 +26,9 @@ const markdown = '# your *Markdown* text _here_';
 const yourCallback = (data) => {
   alert('User ' + data.email + ' had grade ' + data.grade);
 };
+const elementIdToRenderInto = "my-kuiz"
 
-app.init(markdown, yourCallback);
+app.init(markdown, yourCallback, elementIdToRenderInto);
 ```
 
 ## Special notation

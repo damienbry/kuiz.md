@@ -37,7 +37,7 @@ const initialState = {
 
 let store = null;
 
-const init = (kuizString, callback) => {
+const init = (kuizString, callback, elementToRenderInto) => {
 
   //Storing the user's callback
   initialState.callback = callback;
@@ -49,7 +49,7 @@ const init = (kuizString, callback) => {
     <Provider store={store}>
       {Root}
     </Provider>,
-    document.getElementsByClassName('kuiz')[0]
+    document.getElementById(elementToRenderInto)
   );
 }
 

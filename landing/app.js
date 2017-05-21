@@ -1,6 +1,6 @@
 require('./src/styles/app.scss');
 
-const app = require('../kuiz/src');
+const app = require('../kuiz');
 const textarea = document.getElementsByClassName('form')[0];
 
 const parseTextarea = () => {
@@ -9,7 +9,7 @@ const parseTextarea = () => {
 
 app.init(parseTextarea(), (email) => {
   alert(email);
-});
+}, 'kuiz');
 
 // Update the quiz
 let interval = null;

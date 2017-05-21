@@ -13,6 +13,12 @@ yarn add kuiz-md
 
 ## Usage
 
+Provide:
+
+- your markdown text
+- a callback triggered when an user sends the kuiz
+- a HTML element to render the kuiz into
+
 ```javascript
 const app = require('kuiz-md');
 
