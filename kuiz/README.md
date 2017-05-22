@@ -1,5 +1,7 @@
 # Kuiz.md NPM module
 
+:dart: Live demo at [https://kuiz-md.firebaseapp.com](https://kuiz-md.firebaseapp.com)
+
 You can use the kuiz NPM module to generate your own kuiz from Markdown you provide.
 
 ```bash
